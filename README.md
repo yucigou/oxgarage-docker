@@ -17,7 +17,7 @@ This will create an image with the tag "oxgarage".
 To run the image, enter
 
 ```
-# docker run -p 8080:8080 --rm --name oxgarage oxgarage:latest        
+# docker run -p 8080:8080 -p 8000:8000 --rm --name oxgarage oxgarage:latest        
 ``` 
 
 This will run the image and propagate the container port 8080 to your local port 8080.
