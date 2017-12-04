@@ -4,13 +4,13 @@ ENV TOMCAT_WEBAPPS "$CATALINA_HOME"/webapps
 ENV OFFICE_HOME /usr/lib/libreoffice
 
 # current Stylesheets stable (= master branch) version 
-# ENV STYLESHEETS_URL http://jenkins.tei-c.org/job/Stylesheets/lastSuccessfulBuild/artifact/tei-xsl-7.43.0.zip
+ENV STYLESHEETS_URL http://jenkins.tei-c.org/job/Stylesheets/lastSuccessfulBuild/artifact/tei-xsl-7.43.0.zip
 
 # current Stylesheets development version
 # ENV STYLESHEETS_URL http://jenkins.tei-c.org/job/Stylesheets-dev/lastSuccessfulBuild/artifact/tei-xsl-7.44.0a.zip
 
 # current TEI Guidelines stable (= master branch) version 
-# ENV GUIDELINES_URL http://jenkins.tei-c.org/job/TEIP5/lastSuccessfulBuild/artifact/P5/tei-3.2.0.zip
+ENV GUIDELINES_URL http://jenkins.tei-c.org/job/TEIP5/lastSuccessfulBuild/artifact/P5/tei-3.2.0.zip
 
 # current TEI Guidelines development version
 # ENV GUIDELINES_URL http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/tei-3.3.0a.zip
@@ -19,8 +19,11 @@ USER root:root
 COPY oxgarage.properties /etc/
 COPY log4j.xml /var/cache/oxgarage/log4j.xml
 
-COPY tei-xsl-7.43.0.zip /tmp/tei-xsl-7.43.0.zip
-COPY tei-3.2.0.zip /tmp/tei-3.2.0.zip
+ADD $STYLESHEETS_URL /tmp/
+ADD $GUIDELINES_URL /tmp/
+
+#COPY tei-xsl-7.43.0.zip /tmp/tei-xsl-7.43.0.zip
+#COPY tei-3.2.0.zip /tmp/tei-3.2.0.zip
 COPY ege-webclient-0.3.war /tmp/ege-webclient.war
 COPY ege-webservice-0.5.2.war /tmp/ege-webservice.war
 
