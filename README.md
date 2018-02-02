@@ -21,3 +21,9 @@ To run the image, enter
 ``` 
 
 This will run the image and propagate the container port 8080 to your local port 8080, and also expose port 8000 for remote debugging.
+
+Then you can use OxGarage web client in your browser, convert documents such as Microsoft Word to PDF, xHTML, etc.
+
+```
+http://<your host name e.g., localhost>:8080/ege-webclient
+```
