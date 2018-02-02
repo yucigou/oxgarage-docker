@@ -4,13 +4,15 @@ ENV TOMCAT_WEBAPPS "$CATALINA_HOME"/webapps
 ENV OFFICE_HOME /usr/lib/libreoffice
 
 # current Stylesheets stable (= master branch) version 
-ENV STYLESHEETS_URL http://jenkins.tei-c.org/job/Stylesheets/lastSuccessfulBuild/artifact/tei-xsl-7.43.0.zip
+# https://github.com/TEIC/Stylesheets/releases
+ENV STYLESHEETS_URL https://github.com/TEIC/Stylesheets/releases/download/v7.43.0/tei-xsl-7.43.0.zip
 
 # current Stylesheets development version
 # ENV STYLESHEETS_URL http://jenkins.tei-c.org/job/Stylesheets-dev/lastSuccessfulBuild/artifact/tei-xsl-7.44.0a.zip
 
 # current TEI Guidelines stable (= master branch) version 
-ENV GUIDELINES_URL http://jenkins.tei-c.org/job/TEIP5/lastSuccessfulBuild/artifact/P5/tei-3.2.0.zip
+# https://github.com/TEIC/TEI/releases
+ENV GUIDELINES_URL https://github.com/TEIC/TEI/releases/download/P5_Release_3.2.0/tei-3.2.0.zip
 
 # current TEI Guidelines development version
 # ENV GUIDELINES_URL http://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/tei-3.3.0a.zip
